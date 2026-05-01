@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Merlin Group — Hotel Collection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
+</head>
+<body>
+
+<!-- ═══════ LOADER ═══════ -->
+<div id="loader">
+  <div class="loader-logo" id="loaderLogo">MERLIN GROUP</div>
+  <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+  <div class="loader-num" id="loaderNum">0%</div>
+</div>
+
+<!-- ═══════ MOB DRAWER ═══════ -->
+<div class="mob-drawer" id="mobDrawer">
+  <a href="#" onclick="goHome()">Home</a>
+  <a href="#properties" onclick="closeDrawer()">Properties</a>
+  <a href="#amenities" onclick="closeDrawer()">Amenities</a>
+  <a href="#contact" onclick="closeDrawer()">Contact</a>
+  <button class="mob-book" onclick="closeDrawer()">Book a Stay</button>
+</div>
+
+<!-- ═══════ NAV ═══════ -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo" onclick="goHome()">
+    MERLIN<span class="dot">.</span>
+    <span class="nav-logo-sub">Group of hotels</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="goHome()">Home</a></li>
+    <li><a href="#properties" onclick="smoothScrollTo('properties'); return false;">Properties</a></li>
+    <li><a href="#amenities" onclick="smoothScrollTo('amenities'); return false;">Amenities</a></li>
+    <li><a href="#contact" onclick="smoothScrollTo('contact'); return false;">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="smoothScrollTo('cta-sec')">Book Now</button>
+  <button class="nav-ham" id="navHam" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══════════════════════════════════════════════════
+     LANDING PAGE
+══════════════════════════════════════════════════ -->
+<div class="pg active" id="landingPg">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-media" id="heroBg"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow g-hidden" id="h-eye">Luxury Hotel Collection</div>
+      <h1 class="hero-h1 g-hidden" id="h-title">Where Every Stay<br>Becomes a <em>Story</em></h1>
+      <p class="hero-p g-hidden" id="h-sub">Three singular properties. Three distinct worlds. One unwavering standard of care across the Merlin Group collection.</p>
+      <div class="hero-actions g-hidden" id="h-act">
+        <a href="#properties" class="btn-fill" onclick="smoothScrollTo('properties'); return false;">Explore Properties</a>
+        <a href="#cta-sec" class="btn-ghost" onclick="smoothScrollTo('cta-sec'); return false;">Book Now</a>
+      </div>
+    </div>
+    <div class="hero-scroll g-hidden" id="h-scroll">
+      <div class="hero-scroll-line"></div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- INTRO BAND -->
+  <div class="intro-band">
+    <div class="intro-band-item"><span class="num">3</span><span class="lbl">Unique<br>Properties</span></div>
+    <div class="band-sep"></div>
+    <div class="intro-band-item"><span class="num">104</span><span class="lbl">Curated<br>Suites</span></div>
+    <div class="band-sep"></div>
+    <div class="intro-band-item"><span class="num">1</span><span class="lbl">Michelin<br>Star</span></div>
+    <div class="band-sep"></div>
+    <div class="intro-band-item"><span class="num">18</span><span class="lbl">Years of<br>Excellence</span></div>
+    <div class="band-sep"></div>
+    <div class="intro-band-item"><span class="num">5★</span><span class="lbl">Forbes<br>Rating</span></div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="sec about-sec">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="s-label g-up">Our Philosophy</div>
+        <h2 class="s-h2 g-up">Refined <em>restraint</em>,<br>remarkable comfort</h2>
+        <p class="g-up" style="margin-top:1.4rem;">The Merlin Group was founded on a single conviction: that true luxury is not decoration, but presence. Each of our three properties occupies a unique setting that shapes every design decision, every menu, every thread count.</p>
+        <p class="g-up">We believe the finest hospitality is the kind you don't notice — an environment so thoughtfully considered that comfort becomes invisible, and what remains is simply you, in a beautiful place, with nothing left to want.</p>
+      </div>
+      <div class="about-img-grid g-right">
+        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=500&q=80" alt="Suite interior" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=500&q=80" alt="Hotel detail" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPERTIES -->
+  <section class="sec props-sec" id="properties">
+    <div class="props-head">
+      <div>
+        <div class="s-label g-up">The Collection</div>
+        <h2 class="s-h2 g-up">Three <em>Distinct</em> Properties</h2>
+      </div>
+      <div class="right g-up">Each estate is a world unto itself — different in character, united in the Merlin standard of quiet excellence.</div>
+    </div>
+    <div class="props-list">
+
+      <!-- Property 1 -->
+      <div class="prop-row g-scale" id="card-merlin-tuscany">
+        <div class="prop-img-side">
+          <span class="prop-img-tag">Flagship</span>
+          <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900&q=85" alt="Merlin Tuscany" loading="lazy">
+        </div>
+        <div class="prop-info">
+          <div class="prop-num">01</div>
+          <div class="prop-loc">Siena · Tuscany, Italy</div>
+          <h3 class="prop-name">Merlin Tuscany</h3>
+          <p class="prop-desc">Set within a restored 16th-century villa, Merlin Tuscany rises above its own vineyards and olive groves. An estate that has welcomed poets, diplomats, and dreamers since 2006.</p>
+          <div class="prop-tags">
+            <span class="prop-tag">48 Suites</span>
+            <span class="prop-tag">Vineyard</span>
+            <span class="prop-tag">Spa</span>
+            <span class="prop-tag">Michelin ★</span>
+            <span class="prop-tag">Pool</span>
+          </div>
+          <div class="prop-cta-row">
+            <button class="btn-ink" onclick="openDetail('tuscany')">View Property</button>
+            <div class="prop-price"><small>From</small>€ 480 / night</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 2 -->
+      <div class="prop-row g-scale" id="card-merlin-amalfi">
+        <div class="prop-img-side">
+          <span class="prop-img-tag">Coastal</span>
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900&q=85" alt="Merlin Amalfi" loading="lazy">
+        </div>
+        <div class="prop-info">
+          <div class="prop-num">02</div>
+          <div class="prop-loc">Positano · Amalfi Coast, Italy</div>
+          <h3 class="prop-name">Merlin Amalfi</h3>
+          <p class="prop-desc">Suspended above the Tyrrhenian Sea on a sheer cliff face. Every suite is sea-facing; every morning begins with the sound of waves ninety metres below.</p>
+          <div class="prop-tags">
+            <span class="prop-tag">32 Suites</span>
+            <span class="prop-tag">Sea Views</span>
+            <span class="prop-tag">Cave Spa</span>
+            <span class="prop-tag">Boat Access</span>
+            <span class="prop-tag">Sea Pool</span>
+          </div>
+          <div class="prop-cta-row">
+            <button class="btn-ink" onclick="openDetail('amalfi')">View Property</button>
+            <div class="prop-price"><small>From</small>€ 680 / night</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property 3 -->
+      <div class="prop-row g-scale" id="card-merlin-alpine">
+        <div class="prop-img-side">
+          <span class="prop-img-tag">Alpine</span>
+          <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=900&q=85" alt="Merlin Alpine" loading="lazy">
+        </div>
+        <div class="prop-info">
+          <div class="prop-num">03</div>
+          <div class="prop-loc">Chamonix · French Alps</div>
+          <h3 class="prop-name">Merlin Alpine</h3>
+          <p class="prop-desc">At 1,600 metres, stone walls, reclaimed timber, and open fires define a winter sanctuary with ski-in/out access and unbroken views of the Mont Blanc massif.</p>
+          <div class="prop-tags">
+            <span class="prop-tag">24 Suites</span>
+            <span class="prop-tag">Ski-in/out</span>
+            <span class="prop-tag">Hot Tubs</span>
+            <span class="prop-tag">Fireplace</span>
+            <span class="prop-tag">Spa</span>
+          </div>
+          <div class="prop-cta-row">
+            <button class="btn-ink" onclick="openDetail('alpine')">View Property</button>
+            <div class="prop-price"><small>From</small>€ 920 / night</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PARALLAX BAND -->
+  <div class="par-band" id="parSec">
+    <div class="par-bg" id="parBg"></div>
+    <div class="par-content">
+      <div class="s-label g-up" style="justify-content:center; color:var(--c-accent-l);">The Merlin Standard</div>
+      <h2 class="s-h2 g-up">"Silence is <em>its own</em> luxury."</h2>
+      <p class="g-up">— Wallpaper* Magazine · Hotel of the Year 2023</p>
+    </div>
+  </div>
+
+  <!-- AMENITIES -->
+  <section class="sec amen-sec" id="amenities">
+    <div class="s-label g-up">Across The Collection</div>
+    <h2 class="s-h2 g-up">Shared <em>Excellence</em></h2>
+    <div class="amen-grid">
+      <div class="amen-cell g-up">
+        <span class="amen-ico">◈</span>
+        <div class="amen-title">Thermal Spa</div>
+        <div class="amen-body">Each property hosts a full-spectrum wellness sanctuary — hydrotherapy, hammam, and bespoke treatment programmes.</div>
+      </div>
+      <div class="amen-cell g-up">
+        <span class="amen-ico">◈</span>
+        <div class="amen-title">Estate Dining</div>
+        <div class="amen-body">Restaurant menus built around a single principle: the best ingredient within 30 km. One property holds a Michelin star.</div>
+      </div>
+      <div class="amen-cell g-up">
+        <span class="amen-ico">◈</span>
+        <div class="amen-title">Private Concierge</div>
+        <div class="amen-body">A dedicated concierge from first enquiry to final farewell. Fluent in twelve languages, expert in every wish.</div>
+      </div>
+      <div class="amen-cell g-up">
+        <span class="amen-ico">◈</span>
+        <div class="amen-title">Curated Experiences</div>
+        <div class="amen-body">Truffle hunts, private vineyard dinners, glacier helicopter tours — composed around the guest, never the schedule.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band" id="cta-sec">
+    <div class="cta-band-bg" id="ctaBg"></div>
+    <div class="cta-inner">
+      <div class="s-label g-up">Reserve</div>
+      <h2 class="s-h2 g-up">Begin Your <em>Stay</em></h2>
+      <p class="g-up">Reservations are personal conversations. Call us, write to us, or select a property above. We will take care of everything else.</p>
+      <div class="cta-btns g-up">
+        <a href="#properties" class="btn-fill" onclick="smoothScrollTo('properties'); return false;">View Properties</a>
+        <a href="mailto:reservations@merlingroup.com" class="btn-ghost">Email Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="foot-brand-logo">MERLIN.</div>
+        <div class="foot-brand-sub">Hotel Collection</div>
+        <p>Three properties. One commitment.<br>+39 0577 100 200<br>reservations@merlingroup.com</p>
+      </div>
+      <div class="foot-col">
+        <h5>Properties</h5>
+        <ul>
+          <li><a href="#" onclick="openDetail('tuscany')">Merlin Tuscany</a></li>
+          <li><a href="#" onclick="openDetail('amalfi')">Merlin Amalfi</a></li>
+          <li><a href="#" onclick="openDetail('alpine')">Merlin Alpine</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Stay</h5>
+        <ul>
+          <li><a href="#">Rooms & Suites</a></li>
+          <li><a href="#">Dining</a></li>
+          <li><a href="#">Spa</a></li>
+          <li><a href="#">Weddings</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Group</h5>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-copy">© 2024 Merlin Group. All rights reserved.</span>
+      <div class="foot-soc">
+        <a href="#">Instagram</a>
+        <a href="#">Pinterest</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+</div><!-- /landingPg -->
+
+
+<!-- ══════════════════════════════════════════════════
+     DETAIL PAGE
+══════════════════════════════════════════════════ -->
+<div class="pg detail-pg" id="detailPg">
+
+  <button class="d-back" onclick="goHome()">← All Properties</button>
+
+  <div class="d-hero">
+    <div class="d-hero-bg" id="dHeroBg"></div>
+    <div class="d-hero-inner">
+      <div class="d-hero-tag" id="dTag"></div>
+      <h1 class="d-hero-title" id="dTitle"></h1>
+      <div class="d-meta" id="dMeta"></div>
+    </div>
+  </div>
+
+  <div class="d-body">
+    <div class="d-main" id="dMain"></div>
+    <div>
+      <div class="booking-card">
+        <div class="bc-name" id="bcName"></div>
+        <div class="bc-price" id="bcPrice"></div>
+        <div class="bc-divider"></div>
+        <div class="bc-field"><label>Check-in</label><input type="date" id="bcIn"></div>
+        <div class="bc-field"><label>Check-out</label><input type="date" id="bcOut"></div>
+        <div class="bc-field">
+          <label>Guests</label>
+          <select><option>1 Guest</option><option selected>2 Guests</option><option>3 Guests</option><option>4 Guests</option></select>
+        </div>
+        <div class="bc-field"><label>Room Type</label><select id="bcRooms"></select></div>
+        <button class="bc-btn">Reserve Now</button>
+        <p class="bc-note">Free cancellation · No deposit until check-in</p>
+        <div class="bc-extras">
+          <div class="bc-extra">Complimentary welcome amenity</div>
+          <div class="bc-extra">Daily breakfast included</div>
+          <div class="bc-extra">24h concierge service</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- /detailPg -->
+
+
+<!-- ═══════ SCRIPTS ═══════ -->
+<script src="index.js"></script>
+</body>
+</html>
