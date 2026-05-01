@@ -166,10 +166,10 @@ nav.dark-mode .nav-ham span { background: #f4f1ec; }
 }
 .hero-inner {
   position: relative; z-index: 2;
-  padding: 0 7vw; max-width: 700px;
+  padding: 0 9vw; max-width: 800px;
 }
 .hero-eyebrow {
-  font-size: 0.6rem; font-weight: 400; letter-spacing: 0.42em;
+  font-size: 0.6rem; font-weight: 1000; letter-spacing: 0.42em;
   text-transform: uppercase; color: var(--c-accent-l); margin-bottom: 1.6rem;
   display: flex; align-items: center; gap: 14px;
 }

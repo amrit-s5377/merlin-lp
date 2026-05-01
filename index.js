@@ -4,12 +4,12 @@ gsap.registerPlugin(ScrollTrigger);
 /* ── PROPERTY DATA ── */
 const DATA = {
   tuscany: {
-    tag: 'Merlin Tuscany · Siena, Italy',
-    title: 'Merlin <em>Tuscany</em>',
+    tag: 'Days Inn · Bismarck, USA',
+    title: 'Days <em>Inn</em>',
     bg: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=2000&q=90',
-    price: '€ 480',
+    price: '$ 480',
     meta: [
-      {k:'Location',v:'Siena, Tuscany'},
+      {k:'Location',v:'1300 East Capitol Avenue, Bismarck, North Dakota 58501'},
       {k:'Suites',v:'48 rooms'},
       {k:'Grounds',v:'12 acres'},
       {k:'Open since',v:'2006'}
@@ -30,12 +30,12 @@ const DATA = {
     ]
   },
   amalfi: {
-    tag: 'Merlin Amalfi · Positano, Italy',
-    title: 'Merlin <em>Amalfi</em>',
+    tag: 'Microtel Inn & Suites · ND, USA',
+    title: 'Microtel Inn <em>Suites</em>',
     bg: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=2000&q=90',
-    price: '€ 680',
+    price: '$ 680',
     meta: [
-      {k:'Location',v:'Positano, Amalfi Coast'},
+      {k:'Location',v:'3820 4th Avenue West, Williston, North Dakota 58801'},
       {k:'Suites',v:'32 rooms'},
       {k:'Setting',v:'Cliff-side'},
       {k:'Award',v:'Michelin ★ Dining'}
@@ -56,12 +56,12 @@ const DATA = {
     ]
   },
   alpine: {
-    tag: 'Merlin Alpine · Chamonix, France',
-    title: 'Merlin <em>Alpine</em>',
+    tag: 'Roosevelt hotel · ND, USA',
+    title: 'Roosevelt <em>hotel</em>',
     bg: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=2000&q=90',
-    price: '€ 920',
+    price: '$ 920',
     meta: [
-      {k:'Location',v:'Chamonix, France'},
+      {k:'Location',v:'1001 24th ST W, Williston, North Dakota 58801'},
       {k:'Suites',v:'24 rooms'},
       {k:'Altitude',v:'1,600 m'},
       {k:'Ski',v:'Ski-in / Ski-out'}
